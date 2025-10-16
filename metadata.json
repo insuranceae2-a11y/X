@@ -1,0 +1,5 @@
+{
+  "name": "InsuranceAE.com (PolicySnap AE)",
+  "description": "An MVP web application to provide instant ballpark price quotes for car and health insurance in the UAE, connecting users with brokers via WhatsApp. The app supports both English and Arabic.",
+  "requestFramePermissions": []
+}
