@@ -16,15 +16,14 @@ const Hero: React.FC<HeroProps> = ({ onGetStarted, language }) => {
   const [ctaKey, setCtaKey] = useState('heroCTA');
 
   useEffect(() => {
-    // Determine the CTA variant for the user session, for A/B testing.
-    // We store a language-agnostic key ('1' or '2') instead of the text itself.
+
     let ctaVariant = localStorage.getItem('cta_variant');
     if (!ctaVariant) {
       ctaVariant = Math.random() < 0.5 ? '1' : '2';
       localStorage.setItem('cta_variant', ctaVariant);
     }
     setCtaKey(ctaVariant === '1' ? 'heroCTA' : 'heroCTA2');
-  }, []); // Empty dependency array ensures this runs only once on component mount.
+  }, []); 
 
   const ctaText = t[ctaKey] as string;
 
@@ -75,10 +74,10 @@ const Hero: React.FC<HeroProps> = ({ onGetStarted, language }) => {
       </div>
       <div className={language === 'ar' ? 'md:order-1' : ''}>
         <img
-          src="https://images.unsplash.com/photo-1560415755-bd80d06eda60?q=80&w=1740&auto=format&fit=crop"
-          alt="Family enjoying peace of mind with insurance"
-          className="rounded-2xl shadow-2xl transition-transform duration-300 hover:scale-105"
-          loading="lazy"
+            src="/my-hero-image.jpg"
+            alt="Family enjoying peace of mind with insurance"
+            className="rounded-2xl shadow-2xl transition-transform duration-300 hover:scale-105 w-3/4 mx-auto" // 👈 التعديل
+            loading="lazy"
         />
       </div>
     </div>
